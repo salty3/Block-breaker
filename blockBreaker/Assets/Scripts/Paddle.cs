@@ -37,7 +37,7 @@ public class Paddle : MonoBehaviour
         transform.position = paddlePos;
     }
 
-    private void MovementLimitation()
+    public void MovementLimitation()
     {
         minX = 0f;
         maxX = screenWidthInUnits;
