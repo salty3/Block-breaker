@@ -143,6 +143,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6a2ea606030feb343b94079bb22d7fa5, type: 3}
   - {fileID: 8300000, guid: 24101b8d4062a4045a4401de13224918, type: 3}
   randomFactor: 1
+  velocityIncrease: 1.2
+  velocityDecrease: 0.8
+  minVelocityLimit: 10
+  maxVelocityLimit: 30
 --- !u!82 &1212098253842578525
 AudioSource:
   m_ObjectHideFlags: 0

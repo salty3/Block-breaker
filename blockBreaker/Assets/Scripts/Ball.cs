@@ -9,6 +9,10 @@ public class Ball : MonoBehaviour
     [SerializeField] float yPush = 14f;
     [SerializeField] AudioClip[] ballSounds;
     [SerializeField] float randomFactor = 0.2f;
+    [SerializeField] float velocityIncrease = 1.2f;
+    [SerializeField] float velocityDecrease = 0.8f;
+    [SerializeField] float minVelocityLimit = 10f;
+    [SerializeField] float maxVelocityLimit = 40f;
 
     // state
     Vector2 paddleToBallVector;
@@ -17,6 +21,7 @@ public class Ball : MonoBehaviour
     // Cached components refs
     AudioSource audioSource;
     Rigidbody2D rigidBody2D;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -53,17 +58,40 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Vector2 velocityTweak = new Vector2
-            (
-            Random.Range(-randomFactor, randomFactor), 
-            Random.Range(-randomFactor, randomFactor)
-            );
-
         if (hasStarted)
         {
             AudioClip clip = ballSounds[Random.Range(0, ballSounds.Length)];
             audioSource.PlayOneShot(clip);
-            rigidBody2D.velocity += velocityTweak;
+            VelocityTweaks();
+        }
+    }
+
+    private void VelocityTweaks()
+    {
+        Vector2 velocityTweak = new Vector2
+            (
+            Random.Range(-randomFactor, randomFactor),
+            Random.Range(-randomFactor, randomFactor)
+            );
+        Vector2 velocityIncreaseTweak = new Vector2
+            (
+            velocityIncrease,
+            velocityIncrease
+            );
+        Vector2 velocityDecreaseTweak = new Vector2
+            (
+            velocityDecrease,
+            velocityDecrease
+            );
+
+        rigidBody2D.velocity += velocityTweak;
+        if (Mathf.Abs(rigidBody2D.velocity.x) + Mathf.Abs(rigidBody2D.velocity.y) < minVelocityLimit)
+        {
+            rigidBody2D.velocity *= velocityIncreaseTweak;
+        }
+        if (Mathf.Abs(rigidBody2D.velocity.x) + Mathf.Abs(rigidBody2D.velocity.y) > maxVelocityLimit)
+        {
+            rigidBody2D.velocity *= velocityDecreaseTweak;
         }
     }
 }
