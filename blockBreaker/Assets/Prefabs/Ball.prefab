@@ -138,10 +138,10 @@ MonoBehaviour:
   xPush: 1
   yPush: 16
   ballSounds:
-  - {fileID: 8300000, guid: f0409f0a6d7173f4d956e9b65d349a6c, type: 3}
-  - {fileID: 8300000, guid: 6d7a82842f060c34fa5a736aca13e1b2, type: 3}
-  - {fileID: 8300000, guid: 553fd602b101d334caeb9907cf8f46c8, type: 3}
-  - {fileID: 8300000, guid: 536a34bf3f1978d479de5f18ddf273e7, type: 3}
+  - {fileID: 8300000, guid: 2de980c602ada93409e4417ca7300e2e, type: 3}
+  - {fileID: 8300000, guid: 000ab79ba7b9adc45b4e5527a7fb197f, type: 3}
+  - {fileID: 8300000, guid: 6a2ea606030feb343b94079bb22d7fa5, type: 3}
+  - {fileID: 8300000, guid: 24101b8d4062a4045a4401de13224918, type: 3}
   randomFactor: 1
 --- !u!82 &1212098253842578525
 AudioSource:
@@ -155,7 +155,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0

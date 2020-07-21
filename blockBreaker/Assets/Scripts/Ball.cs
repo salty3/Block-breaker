@@ -55,8 +55,8 @@ public class Ball : MonoBehaviour
     {
         Vector2 velocityTweak = new Vector2
             (
-            Random.Range(0f, randomFactor), 
-            Random.Range(0f, randomFactor)
+            Random.Range(-randomFactor, randomFactor), 
+            Random.Range(-randomFactor, randomFactor)
             );
 
         if (hasStarted)
