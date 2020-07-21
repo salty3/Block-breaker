@@ -3801,6 +3801,11 @@ PrefabInstance:
       propertyPath: isAutoPlayEnabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1692511845417734727, guid: e9393998e2a327a4ea1d7ad24814053b,
+        type: 3}
+      propertyPath: gameSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1692511845417734728, guid: e9393998e2a327a4ea1d7ad24814053b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4126,6 +4131,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7766264380864756870, guid: 891e21f3151935f4fb41fe751be65bd5,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.5188679
+      objectReference: {fileID: 0}
+    - target: {fileID: 7766264380864756870, guid: 891e21f3151935f4fb41fe751be65bd5,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.5188679
+      objectReference: {fileID: 0}
+    - target: {fileID: 7766264380864756870, guid: 891e21f3151935f4fb41fe751be65bd5,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.5188679
+      objectReference: {fileID: 0}
     - target: {fileID: 7766264381777230614, guid: 891e21f3151935f4fb41fe751be65bd5,
         type: 3}
       propertyPath: m_LocalPosition.x
