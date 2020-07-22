@@ -9,6 +9,7 @@ public class Ball : MonoBehaviour
     [SerializeField] float yPush = 14f;
     [SerializeField] AudioClip[] ballSounds;
     [SerializeField] float randomFactor = 0.2f;
+
     [SerializeField] float velocityIncrease = 1.2f;
     [SerializeField] float velocityDecrease = 0.8f;
     [SerializeField] float minVelocityLimit = 10f;
@@ -66,7 +67,6 @@ public class Ball : MonoBehaviour
         transform.position = paddlePos + paddleToBallVector;
     }
 
-    
 
     private void VelocityTweaks()
     {
