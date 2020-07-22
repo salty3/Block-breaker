@@ -128,5 +128,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenWidthInUnits: 16
-  minX: 0
-  maxX: 16
+  collisionXVelocityMultipier: 1.1

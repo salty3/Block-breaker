@@ -6,6 +6,7 @@ public class Paddle : MonoBehaviour
     //config param
 
     [SerializeField] float screenWidthInUnits = 16f;
+    [SerializeField] float collisionXVelocityMultipier = 1f;
 
 
     float minX;
@@ -29,9 +30,14 @@ public class Paddle : MonoBehaviour
         Movement();
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Vector2 ballXVelocityIncrease = new Vector2(GetXPos() * collisionXVelocityMultipier, 0);
+        collision.rigidbody.velocity += ballXVelocityIncrease;
+    }
+
     private void Movement()
     {
-        float mousePosInUnits = Input.mousePosition.x / Screen.width * screenWidthInUnits;
         Vector2 paddlePos = new Vector2(transform.position.x, transform.position.y);
         paddlePos.x = Mathf.Clamp(GetXPos(), minX, maxX);
         transform.position = paddlePos;

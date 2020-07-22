@@ -41,6 +41,16 @@ public class Ball : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (hasStarted)
+        {
+            AudioClip clip = ballSounds[Random.Range(0, ballSounds.Length)];
+            audioSource.PlayOneShot(clip);
+            VelocityTweaks();
+        }
+    }
+
     private void LaunchOnClick()
     {
         if (Input.GetMouseButtonDown(0))
@@ -56,15 +66,7 @@ public class Ball : MonoBehaviour
         transform.position = paddlePos + paddleToBallVector;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (hasStarted)
-        {
-            AudioClip clip = ballSounds[Random.Range(0, ballSounds.Length)];
-            audioSource.PlayOneShot(clip);
-            VelocityTweaks();
-        }
-    }
+    
 
     private void VelocityTweaks()
     {
